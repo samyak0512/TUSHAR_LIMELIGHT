@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limelight by Payleaf: The Future of Flexible Workspace</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for a professional look */
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
+        
+        :root {
+            /* Updated to Brown and Beige theme */
+            --primary-color: #442d1f; /* Dark Brown */
+            --accent-color: #d4c09d; /* Soft Beige/Tan */
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif; /* Updated Font */
+            font-weight: 400; /* Explicitly set default weight for better bold contrast */
+            background-color: #fcfcfc; /* Very light background */
+            line-height: 1.6;
+            color: var(--primary-color);
+        }
+
+        .deck-container {
+            max-width: 600px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            background-color: white;
+        }
+
+        /* Custom glow effect for the limelight branding */
+        .limelight-glow {
+            text-shadow: 0 0 10px rgba(212, 192, 157, 0.9); /* Beige glow */
+        }
+
+        /* Active tab styling */
+        .tab-button.active {
+            color: var(--primary-color);
+            background-color: var(--accent-color); /* Soft Beige */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Adjust colors of non-active tab buttons for the new theme */
+        .tab-button:not(.active) {
+            color: #574636; /* Medium Brown */
+            background-color: #eee9e3; /* Lightest beige */
+        }
+    </style>
+</head>
+<body>
+
+<div class="deck-container">
+    <!-- Header/Branding - Star removed -->
+    <header class="p-6 bg-stone-800 text-white rounded-t-lg shadow-lg">
+        <h1 class="text-3xl font-extrabold flex items-center">
+            <span class="text-amber-300 limelight-glow">Limelight</span>
+            <span class="ml-2 font-light text-stone-300">by Payleaf</span>
+        </h1>
+        <p class="mt-1 text-sm text-stone-400">Premium Coworking & Flexible Offices in Noida</p>
+    </header>
+
+    <!-- Navigation Tabs (Updated with Gallery) -->
+    <nav class="flex justify-around p-3 bg-stone-100 border-b border-stone-300 sticky top-0 z-10">
+        <button class="tab-button flex-1 py-2 px-1 text-xs sm:text-sm font-semibold mx-1" onclick="showSection('hero')">
+            Intro & USP
+        </button>
+        <button class="tab-button flex-1 py-2 px-1 text-xs sm:text-sm font-semibold mx-1" onclick="showSection('spaces')">
+            Our Spaces
+        </button>
+        <button class="tab-button flex-1 py-2 px-1 text-xs sm:text-sm font-semibold mx-1" onclick="showSection('features')">
+            Key Features
+        </button>
+        <button class="tab-button flex-1 py-2 px-1 text-xs sm:text-sm font-semibold mx-1" onclick="showSection('gallery')">
+            Gallery
+        </button>
+        <button class="tab-button flex-1 py-2 px-1 text-xs sm:text-sm font-semibold mx-1" onclick="showSection('cta')">
+            Next Step
+        </button>
+    </nav>
+
+    <!-- Content Sections -->
+    <main class="flex-grow p-6 text-[var(--primary-color)]">
+        
+        <!-- 1. Hero / USP Section -->
+        <section id="hero" class="deck-section">
+            <h2 class="text-2xl font-extrabold mb-4">1. The Corporate Edge</h2>
+            <p class="mb-6 text-stone-600">Limelight by Payleaf is more than just a desk; it's a platform for your business's success, engineered for high-growth companies in Noida's corporate ecosystem.</p>
+            
+            <div class="space-y-4">
+                <!-- Theme Block 1: Beige/Tan -->
+                <div class="bg-amber-50 p-4 rounded-xl border-l-4 border-amber-500 shadow-md">
+                    <h3 class="font-bold text-lg text-amber-700 mb-1 flex items-center">
+                        <span class="text-2xl mr-2">&#128205;</span> Strategic Location
+                    </h3>
+                    <p class="text-sm text-amber-900">Nestled in Sector 127, Noida Expressway, ensuring easy access for clients and a professional address for your brand.</p>
+                </div>
+                
+                <!-- Theme Block 2: Off-White/Stone -->
+                <div class="bg-stone-100 p-4 rounded-xl border-l-4 border-stone-500 shadow-md">
+                    <h3 class="font-bold text-lg text-stone-700 mb-1 flex items-center">
+                        <span class="text-2xl mr-2">&#127970;</span> Grade A Infrastructure
+                    </h3>
+                    <p class="text-sm text-stone-900">Located on the 6th floor of a premier building, offering a professional image and uninterrupted operations with 100% power backup.</p>
+                </div>
+                
+                <!-- Theme Block 3: Light Brown/Zinc -->
+                <div class="bg-zinc-100 p-4 rounded-xl border-l-4 border-zinc-500 shadow-md">
+                    <h3 class="font-bold text-lg text-zinc-700 mb-1 flex items-center">
+                        <span class="text-2xl mr-2">&#128200;</span> Built for Scalability
+                    </h3>
+                    <p class="text-sm text-zinc-900">With a capacity of 500+ seats, scale up or down effortlessly without the headache of long-term traditional leases.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Spaces Section (Initially hidden) -->
+        <section id="spaces" class="deck-section hidden">
+            <h2 class="text-2xl font-extrabold mb-6">2. Find Your Perfect Space</h2>
+            
+            <div class="space-y-6">
+                
+                <!-- Private Cabins -->
+                <div class="bg-white border border-stone-200 p-4 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-stone-700">&#128274;</span> Private Cabins
+                    </h3>
+                    <p class="text-sm text-stone-600 mb-3">Lockable, furnished, and secure offices perfect for teams requiring confidentiality and a consistent brand presence.</p>
+                    <ul class="text-xs text-stone-500 list-disc ml-4 space-y-1">
+                        <li>Dedicated Climate Control</li>
+                        <li>Consistent Team Branding</li>
+                        <li>24/7 Access Available</li>
+                    </ul>
+                </div>
+
+                <!-- Dedicated Desks -->
+                <div class="bg-white border border-stone-200 p-4 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-stone-700">&#128187;</span> Dedicated Desks
+                    </h3>
+                    <p class="text-sm text-stone-600 mb-3">A fixed, exclusive desk reserved just for you or your team members in a dynamic, shared office environment.</p>
+                    <ul class="text-xs text-stone-500 list-disc ml-4 space-y-1">
+                        <li>Fixed Ergonomic Seating</li>
+                        <li>Personal Storage Space</li>
+                        <li>High-speed LAN/Wi-Fi Access</li>
+                    </ul>
+                </div>
+
+                <!-- Flexible Desks -->
+                <div class="bg-white border border-stone-200 p-4 rounded-xl shadow-lg">
+                    <h3 class="font-bold text-xl mb-2 flex items-center">
+                        <span class="text-3xl mr-2 text-stone-700">&#128190;</span> Flexible/Hot Desks
+                    </h3>
+                    <p class="text-sm text-stone-600 mb-3">The ultimate in flexibility for freelancers, consultants, or those needing a professional spot a few days a week.</p>
+                    <ul class="text-xs text-stone-500 list-disc ml-4 space-y-1">
+                        <li>Access to Open & Lounge Areas</li>
+                        <li>Perfect for Networking</li>
+                        <li>Day Passes Available</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Key Features Section (Initially hidden) -->
+        <section id="features" class="deck-section hidden">
+            <h2 class="text-2xl font-extrabold mb-6">3. Amenities That Differentiate</h2>
+            
+            <!-- Highlight Box - Changed to Beige/Brown -->
+            <div class="bg-amber-100 p-5 rounded-xl mb-6 shadow-xl border-l-4 border-amber-600">
+                <h3 class="font-extrabold text-xl text-amber-800 flex items-center mb-2">
+                    <span class="text-3xl mr-2">&#127908;</span> The Unique Podcast Studio
+                </h3>
+                <p class="text-sm text-amber-900">Produce professional-grade content without leaving the office! Our soundproof studio is equipped with high-quality mics, mixing gear, and optimal lighting for podcasts, videos, and webinars.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Feature 1 -->
+                <div class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-stone-200">
+                    <span class="text-2xl mr-3 text-red-700">&#128197;</span>
+                    <div>
+                        <h4 class="font-semibold">Meeting & Conference Rooms</h4>
+                        <p class="text-sm text-stone-600">From intimate huddle rooms to 10-seater boardrooms, all facilities include smart screens and advanced conferencing tools.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-stone-200">
+                    <span class="text-2xl mr-3 text-amber-700">&#127752;</span>
+                    <div>
+                        <h4 class="font-semibold">Community & Wellness</h4>
+                        <p class="text-sm text-stone-600">Curated events (Networking Nights, Cultural Evenings, Yoga) to build bridges and turn casual encounters into business opportunities.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-stone-200">
+                    <span class="text-2xl mr-3 text-stone-700">&#128246;</span>
+                    <div>
+                        <h4 class="font-semibold">Blazing Fast Connectivity</h4>
+                        <p class="text-sm text-stone-600">High-speed Wi-Fi and dedicated Ethernet options ensure business operations run seamlessly 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Gallery Section (Updated with Placeholder Images for portability) -->
+        <section id="gallery" class="deck-section hidden">
+            <h2 class="text-2xl font-extrabold mb-6">4. Gallery: See The Space</h2>
+            <p class="text-sm text-stone-600 mb-4">A glimpse into the premium design and vibrant atmosphere of Limelight by Payleaf. (Visuals guaranteed to load on all devices)</p>
+
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Image 1: Lounge/Waiting Area -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Lounge+Area" alt="Lounge Area with Green Wall" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+                
+                <!-- Image 2: Private Office/Corridor View -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Private+Offices" alt="Private office corridor view" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+
+                <!-- Image 3: Conference Room 1 -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Large+Boardroom" alt="Large Conference Room" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+                
+                <!-- Image 4: Huddle Room -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Huddle+Room" alt="Small Meeting Room / Huddle Room" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+
+                <!-- Image 5: Open Lounge/Cafe Area Wide View 1 -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Cafe+%26+Collaboration" alt="Open Cafe and Collaboration Area" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+                
+                <!-- Image 6: Open Lounge/Cafe Area Wide View 2 -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Lounge+Seating" alt="Open Office Lounge Seating" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+
+                <!-- Image 7: Entrance/Reception Seating -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Reception+Area" alt="Reception Area Seating" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+                
+                <!-- Image 8: Conference Room 2 (Angle 1) -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Meeting+Room+A" alt="Conference Room with Orange Chairs" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+                
+                <!-- Image 9: Conference Room 2 (Angle 2) -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Meeting+Room+B" alt="Boardroom Interior" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+                
+                <!-- Image 10: Library/Quiet Zone -->
+                <img src="https://placehold.co/600x600/D4C09D/442D1F?text=Quiet+Zone" alt="Quiet Zone with Bean Bag and Bookshelf" class="w-full h-auto object-cover rounded-lg shadow-md aspect-square">
+            </div>
+        </section>
+
+
+        <!-- 5. CTA Section (Moved to the last section, was section 4) -->
+        <section id="cta" class="deck-section hidden text-center">
+            <div class="mt-12 mb-8 p-6 bg-stone-100 rounded-xl shadow-inner">
+                <h2 class="text-3xl font-extrabold mb-3">Ready to Step into the Limelight?</h2>
+                <p class="text-lg text-stone-600">The best way to experience our space is to see it. Book a personalized tour today!</p>
+            </div>
+
+            <!-- CTA Button - Changed to Amber Brown -->
+            <button id="bookTourBtn" class="w-full bg-amber-700 hover:bg-amber-800 text-white font-bold py-4 rounded-xl transition duration-300 transform hover:scale-[1.01] shadow-lg mb-6">
+                BOOK A TOUR NOW
+            </button>
+            
+            <!-- Contact Box - Changed to Dark Brown -->
+            <div class="bg-stone-800 text-white p-4 rounded-xl shadow-xl">
+                <p class="font-bold mb-2">Quick Contact Details</p>
+                <p class="text-sm">📞 <span id="contact-phone">+91-7835831331</span></p>
+                <p class="text-sm">📧 <span id="contact-email">info@limelightbypayleaf.com</span></p>
+
+                <button id="copyCta" class="mt-3 bg-amber-400 hover:bg-amber-500 text-stone-900 text-sm font-semibold py-2 px-4 rounded-lg transition duration-200">
+                    Copy Contact Info
+                </button>
+                <p id="copyMessage" class="text-xs text-amber-200 mt-2 opacity-0 transition duration-300">Copied to clipboard!</p>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="p-4 text-center text-xs text-stone-400 border-t mt-4 border-stone-200">
+        &copy; 2025 Limelight by Payleaf. All Rights Reserved.
+        <br>Lotus Business Park, Sector 127, Noida.
+    </footer>
+</div>
+
+<script>
+    // Initial section to display
+    let currentSection = 'hero';
+
+    // Function to handle tab switching
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.deck-section').forEach(section => {
+            section.classList.add('hidden');
+        });
+        
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Show the selected section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.remove('hidden');
+            currentSection = sectionId;
+        }
+
+        // Add 'active' class to the corresponding button
+        const targetButton = document.querySelector(.tab-button[onclick*="'${sectionId}'"]);
+        if (targetButton) {
+            targetButton.classList.add('active');
+        }
+    }
+
+    // Function to copy contact details
+    function copyContactInfo() {
+        const phone = document.getElementById('contact-phone').innerText;
+        const email = document.getElementById('contact-email').innerText;
+        
+        const textToCopy = Limelight by Payleaf Contact:\nPhone: ${phone}\nEmail: ${email}\nWebsite: https://limelightbypayleaf.com/;
+
+        // Use document.execCommand('copy') as navigator.clipboard may be restricted in some environments (like iframes)
+        const tempInput = document.createElement('textarea');
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        
+        // Show confirmation message
+        const messageElement = document.getElementById('copyMessage');
+        messageElement.classList.remove('opacity-0');
+        messageElement.classList.add('opacity-100');
+        setTimeout(() => {
+            messageElement.classList.remove('opacity-100');
+            messageElement.classList.add('opacity-0');
+        }, 2000);
+    }
+
+    // Set up event listeners and initial state on load
+    window.onload = function() {
+        // Initialize the view, defaulting to 'hero' and activating its button
+        showSection(currentSection);
+
+        // Add event listener for the copy button
+        document.getElementById('copyCta').addEventListener('click', copyContactInfo);
+        
+        // Add event listener for the book tour button (Updated to link to the website)
+        document.getElementById('bookTourBtn').addEventListener('click', () => {
+             // Redirect the client to the Limelight website
+             window.location.href = "https://www.limelightbypayleaf.com/"; 
+             console.log("Redirecting to Limelight website for booking.");
+        });
+    };
+</script>
+
+</body>
+</html>
