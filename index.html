@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Limelight by Payleaf: The Future of Flexible Workspace</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -306,7 +306,8 @@
         }
 
         // Add 'active' class to the corresponding button
-        const targetButton = document.querySelector(.tab-button[onclick*="'${sectionId}'"]);
+        // Correct selector: use a template literal; attribute contains the sectionId (e.g. showSection('hero'))
+        const targetButton = document.querySelector(`.tab-button[onclick*="${sectionId}"]`);
         if (targetButton) {
             targetButton.classList.add('active');
         }
@@ -317,17 +318,39 @@
         const phone = document.getElementById('contact-phone').innerText;
         const email = document.getElementById('contact-email').innerText;
         
-        const textToCopy = Limelight by Payleaf Contact:\nPhone: ${phone}\nEmail: ${email}\nWebsite: https://limelightbypayleaf.com/;
+        const textToCopy = `Limelight by Payleaf Contact:
+Phone: ${phone}
+Email: ${email}
+Website: https://limelightbypayleaf.com/`;
 
-        // Use document.execCommand('copy') as navigator.clipboard may be restricted in some environments (like iframes)
+        // Use navigator.clipboard if available, otherwise fallback to execCommand
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => showCopyMessage())
+                .catch(() => fallbackCopy(textToCopy));
+        } else {
+            fallbackCopy(textToCopy);
+        }
+    }
+
+    function fallbackCopy(text) {
         const tempInput = document.createElement('textarea');
-        tempInput.value = textToCopy;
+        tempInput.value = text;
+        // avoid scrolling to bottom
+        tempInput.style.position = 'fixed';
+        tempInput.style.left = '-9999px';
         document.body.appendChild(tempInput);
         tempInput.select();
-        document.execCommand('copy');
+        try {
+            document.execCommand('copy');
+            showCopyMessage();
+        } catch (err) {
+            console.warn('Copy failed', err);
+        }
         document.body.removeChild(tempInput);
-        
-        // Show confirmation message
+    }
+
+    function showCopyMessage() {
         const messageElement = document.getElementById('copyMessage');
         messageElement.classList.remove('opacity-0');
         messageElement.classList.add('opacity-100');
@@ -343,14 +366,18 @@
         showSection(currentSection);
 
         // Add event listener for the copy button
-        document.getElementById('copyCta').addEventListener('click', copyContactInfo);
+        const copyBtn = document.getElementById('copyCta');
+        if (copyBtn) copyBtn.addEventListener('click', copyContactInfo);
         
         // Add event listener for the book tour button (Updated to link to the website)
-        document.getElementById('bookTourBtn').addEventListener('click', () => {
-             // Redirect the client to the Limelight website
-             window.location.href = "https://www.limelightbypayleaf.com/"; 
-             console.log("Redirecting to Limelight website for booking.");
-        });
+        const bookBtn = document.getElementById('bookTourBtn');
+        if (bookBtn) {
+            bookBtn.addEventListener('click', () => {
+                 // Redirect the client to the Limelight website
+                 window.location.href = "https://www.limelightbypayleaf.com/"; 
+                 console.log("Redirecting to Limelight website for booking.");
+            });
+        }
     };
 </script>
 
